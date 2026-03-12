@@ -543,7 +543,11 @@ export default function HomePage() {
           .to('#scroll-hint', { opacity: 1, duration: 0.5 }, '-=0.2');
       };
 
-      initIntro();
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(initIntro);
+      } else {
+        setTimeout(initIntro, 50);
+      }
 
       cleanup = () => {
         st.kill();
