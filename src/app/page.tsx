@@ -365,10 +365,14 @@ export default function HomePage() {
 
     /* ── GSAP ── */
     let cleanup: (() => void) | undefined;
+    let isMounted = true;
 
     (async () => {
       const { gsap } = await import('gsap');
       const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+      
+      if (!isMounted) return;
+      
       gsap.registerPlugin(ScrollTrigger);
 
       let currentPhaseIdx = 0;
@@ -498,29 +502,41 @@ export default function HomePage() {
       });
 
       /* Intro animation */
+      let tl: any;
       const initIntro = async () => {
+        const overlayEl = document.getElementById('intro-overlay');
+        const chars = document.querySelectorAll('.intro-char');
+        const line = document.querySelector('.intro-line');
+        const sub = document.querySelector('.intro-sub');
+
+        // If React hasn't painted them yet, retry in 50ms
+        if (!overlayEl || chars.length === 0) {
+           setTimeout(initIntro, 50);
+           return;
+        }
+
         // Prevent scroll during intro
         document.body.style.overflow = 'hidden';
 
-        const tl = gsap.timeline();
+        tl = gsap.timeline();
         tl
           // Letters stagger up
-          .to('.intro-char', {
+          .to(chars, {
             opacity: 1, y: 0,
             duration: 0.9, stagger: 0.07, ease: 'power3.out', delay: 0.3,
           })
           // Gold line expands
-          .to('.intro-line', {
+          .to(line, {
             width: 180, opacity: 1, duration: 0.7, ease: 'power2.inOut',
           }, '-=0.2')
           // Subtitle fades in
-          .to('.intro-sub', {
+          .to(sub, {
             opacity: 1, duration: 0.5,
           }, '-=0.2')
           // Hold for 1 second
           .to({}, { duration: 1.0 })
           // Entire overlay fades out
-          .to('#intro-overlay', {
+          .to(overlayEl, {
             opacity: 0, duration: 1.0, ease: 'power2.inOut',
             onComplete: () => {
               const el = document.getElementById('intro-overlay');
@@ -543,18 +559,18 @@ export default function HomePage() {
           .to('#scroll-hint', { opacity: 1, duration: 0.5 }, '-=0.2');
       };
 
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(initIntro);
-      } else {
-        setTimeout(initIntro, 50);
-      }
+      initIntro();
 
       cleanup = () => {
         st.kill();
+        if (tl) tl.kill();
       };
     })();
 
-    return () => { if (cleanup) cleanup(); };
+    return () => { 
+      isMounted = false;
+      if (cleanup) cleanup(); 
+    };
   }, []);
 
   /* ── SECTION REVEALS ── */
