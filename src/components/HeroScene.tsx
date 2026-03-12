@@ -58,13 +58,13 @@ export default function HeroScene() {
             heroCanvas.height = frame0.naturalHeight || window.innerHeight;
             hctx.drawImage(frame0, 0, 0, heroCanvas.width, heroCanvas.height);
         };
-        frame0.src = '/hero-sequence/0050.png';
+        frame0.src = '/hero-sequence/0050.webp';
         imagesRef.current[0] = frame0;
 
         // Step 5: Load frames 1–49 right away (eager preload)
         for (let i = 1; i < 50; i++) {
             const img = new Image();
-            img.src = `/hero-sequence/${String(50 + i).padStart(4, '0')}.png`;
+            img.src = `/hero-sequence/${String(50 + i).padStart(4, '0')}.webp`;
             imagesRef.current[i] = img;
         }
 
@@ -72,7 +72,7 @@ export default function HeroScene() {
         const loadRestFrames = () => {
             for (let i = 50; i < frameCount; i++) {
                 const img = new Image();
-                img.src = `/hero-sequence/${String(50 + i).padStart(4, '0')}.png`;
+                img.src = `/hero-sequence/${String(50 + i).padStart(4, '0')}.webp`;
                 imagesRef.current[i] = img;
             }
         };

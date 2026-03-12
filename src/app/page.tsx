@@ -76,7 +76,7 @@ const PHASE_LABELS = [
 
 const FRAME_COUNT = 137;
 const getFrameSrc = (i: number) =>
-  `/hero-sequence/${String(50 + i).padStart(4, '0')}.png`;
+  `/hero-sequence/${String(50 + i).padStart(4, '0')}.webp`;
 
 const TICKER_ITEMS = [
   'DGCA Certified',
