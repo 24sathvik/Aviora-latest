@@ -4,7 +4,10 @@ import styles from '../privacy-policy/legal.module.css';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions — Aviora Aviation Academy',
-  description: 'Terms and Conditions governing use of Aviora Aviation Academy services, programs, and website.',
+  description: 'Terms and Conditions governing enrollment, flight training, ground school, simulator sessions, fees, and code of conduct at Aviora Aviation Academy.',
+  alternates: {
+    canonical: 'https://avioraaviation.in/terms-and-conditions',
+  },
 };
 
 export default function TermsAndConditionsPage() {
@@ -12,9 +15,13 @@ export default function TermsAndConditionsPage() {
     <main className={styles.page}>
       <div className={styles.hero}>
         <div className={styles.heroInner}>
-          <div className={styles.eyebrow}>Legal</div>
+          <div className={styles.eyebrow}>
+            <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
+            <span>/</span>
+            <span>Legal</span>
+          </div>
           <h1 className={styles.heroTitle}>Terms &amp; Conditions</h1>
-          <p className={styles.heroSub}>Last updated: May 2026</p>
+          <p className={styles.heroSub}>Last updated: August 2026 · Aviora Aviation Academy</p>
         </div>
       </div>
 
@@ -24,152 +31,96 @@ export default function TermsAndConditionsPage() {
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>1. Acceptance of Terms</h2>
             <p className={styles.para}>
-              By accessing our website, submitting an application, or enrolling in any program offered by Aviora Aviation Academy (&quot;Aviora&quot;, &quot;the Academy&quot;, &quot;we&quot;, &quot;our&quot;), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree, please do not use our services.
+              These Terms and Conditions constitute a legally binding agreement between you (&quot;Student&quot;, &quot;Cadet&quot;, &quot;Applicant&quot;, or &quot;User&quot;) and Aviora Aviation Academy, operated by Onestop Aviation Pvt Ltd (&quot;Aviora&quot;, &quot;the Academy&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;).
             </p>
             <p className={styles.para}>
-              These Terms govern your use of our website at avioraacademy.com and all services, programs, and training offered by Aviora Aviation Academy.
+              By visiting <Link href="/" className={styles.emailLink}>avioraaviation.in</Link>, submitting an application through our <Link href="/admissions" className={styles.emailLink}>Admissions Desk</Link>, or registering for any of our <Link href="/programs" className={styles.emailLink}>training programs</Link>, you acknowledge that you have read, understood, and agreed to adhere strictly to all terms, policies, and regulations detailed herein.
             </p>
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>2. Programs & Services</h2>
-            <p className={styles.para}>Aviora Aviation Academy offers the following training programs:</p>
+            <h2 className={styles.sectionTitle}>2. Scope of Aviation Training Programs</h2>
+            <p className={styles.para}>Aviora Aviation Academy provides structured, industry-aligned aviation education across specialized pathways:</p>
             <ul className={styles.list}>
-              <li><strong>DGCA Ground School</strong> — Theory preparation for DGCA CPL examinations.</li>
-              <li><strong>Integrated CPL Program</strong> — Full pilot training pathway including ground school, simulator, and flight training in India and the USA.</li>
-              <li><strong>Global Training Program (USA)</strong> — International flight training at FAA Part 141 certified schools in Sacramento, California.</li>
-              <li><strong>Cabin Crew Program</strong> — Airline cabin crew grooming, safety training, and placement preparation.</li>
-              <li><strong>Type Rating</strong> — DGCA-recognised type rating programs for A320, B737, and ATR aircraft.</li>
-              <li><strong>Foreign Licence Conversion</strong> — Assistance with converting FAA or EASA licences to DGCA CPL.</li>
-            </ul>
-            <p className={styles.para}>
-              Program content, fees, duration, and locations are subject to change. Aviora reserves the right to modify or discontinue any program with reasonable notice to enrolled students.
-            </p>
-          </section>
-
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>3. Eligibility & Admissions</h2>
-            <p className={styles.para}>Admission to any Aviora program is subject to meeting the eligibility criteria specified for each program. General requirements include:</p>
-            <ul className={styles.list}>
-              <li>Minimum age of 17 years (for first solo flight) or 18 years as applicable.</li>
-              <li>Completion of 10+2 with Physics and Mathematics (for pilot programs) or 10+2 in any stream (for cabin crew).</li>
-              <li>Satisfactory medical fitness as per DGCA or FAA standards (for pilot programs).</li>
-              <li>Valid Indian passport for international training programs.</li>
-            </ul>
-            <p className={styles.para}>
-              Aviora reserves the right to refuse admission to any applicant who does not meet the eligibility criteria or whose profile is deemed unsuitable. Aviora&apos;s decision on admissions is final and binding.
-            </p>
-          </section>
-
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>4. Fees, Payments & Refunds</h2>
-            <h3 className={styles.subTitle}>4.1 Fee Payment</h3>
-            <p className={styles.para}>
-              Program fees must be paid as per the schedule outlined in your Offer Letter. An initial seat deposit is required to confirm enrollment. Failure to pay fees on time may result in deferment or cancellation of enrollment.
-            </p>
-            <h3 className={styles.subTitle}>4.2 Refund Policy</h3>
-            <p className={styles.para}>Refunds are governed by the following conditions:</p>
-            <ul className={styles.list}>
-              <li><strong>Cancellation before program commencement:</strong> Seat deposit is non-refundable. Additional fees paid may be refunded at Aviora&apos;s discretion after deducting administrative costs.</li>
-              <li><strong>Cancellation after program commencement:</strong> No refund of fees paid for the current phase of training.</li>
-              <li><strong>Medical disqualification:</strong> If a student is medically disqualified post-enrollment (confirmed by an approved AME), fees may be partially refunded after deducting incurred costs, subject to review.</li>
-              <li><strong>Visa rejection:</strong> In cases of M1 visa rejection for reasons outside the student&apos;s control, Aviora will work with the student to find alternative solutions. Fees paid for the domestic phase are non-refundable.</li>
-            </ul>
-            <p className={styles.para}>All refund requests must be submitted in writing to <a href="mailto:admissions@avioraacademy.com,fly@avioraacademy.com" className={styles.emailLink}>admissions@avioraacademy.com / fly@avioraacademy.com</a> within 14 days of the event giving rise to the claim.</p>
-
-            <h3 className={styles.subTitle}>4.3 Third-Party Costs</h3>
-            <p className={styles.para}>
-              Certain costs — including but not limited to DGCA examination fees, medical examination fees, visa fees, flight training charges at partner ATOs, and accommodation costs — are payable directly to third parties and are outside Aviora&apos;s refund policy.
-            </p>
-          </section>
-
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>5. Student Responsibilities</h2>
-            <p className={styles.para}>As a student of Aviora Aviation Academy, you are responsible for:</p>
-            <ul className={styles.list}>
-              <li>Attending all scheduled ground school sessions, simulator sessions, and flight briefings.</li>
-              <li>Maintaining a minimum attendance of 80% across all training components.</li>
-              <li>Adhering to all safety protocols, aviation regulations (DGCA, FAA), and academy rules.</li>
-              <li>Maintaining respectful and professional conduct toward instructors, staff, and fellow students.</li>
-              <li>Providing accurate and truthful information in all applications and documentation.</li>
-              <li>Obtaining and maintaining valid DGCA medical certificates (for pilot programs) throughout training.</li>
-              <li>Ensuring your passport and visa documents remain valid for the full duration of international training.</li>
+              <li><strong><Link href="/programs/pilot-training" className={styles.emailLink}>Commercial Pilot Licence (CPL) Ground School</Link>:</strong> Comprehensive ground theory curriculum covering all four DGCA written papers (Air Navigation, Aviation Meteorology, Air Regulations, Technical General/Specific) and Radio Telephony Restricted (Aeronautical) [RTR(A)].</li>
+              <li><strong><Link href="/programs/global-training" className={styles.emailLink}>Global Flight Training Pathway (USA)</Link>:</strong> International flight training conducted at FAA Part 141 approved flight training academies in California/Arizona, logging FAA PPL, Instrument Rating, Multi-Engine, and Commercial Pilot hours for seamless DGCA licence conversion.</li>
+              <li><strong><Link href="/programs/type-rating" className={styles.emailLink}>Type Rating Certification</Link>:</strong> Level D Full Flight Simulator (FFS) type rating training for Airbus A320, Boeing B737, and ATR 72-600 commercial aircraft families.</li>
+              <li><strong><Link href="/programs/cabin-crew" className={styles.emailLink}>Cabin Crew & Hospitality Diploma</Link>:</strong> Practical airline grooming, mock cabin drills, safety and emergency procedures (SEP), in-flight service management, and interview preparation.</li>
+              <li><strong><Link href="/facilities" className={styles.emailLink}>Simulator Training Sessions</Link>:</strong> Pre-flight and instrument rehearsal on our DGCA-recognized Level D equivalent Fixed Base Simulator (FBS).</li>
             </ul>
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>6. Placement Assistance</h2>
-            <p className={styles.para}>
-              Aviora provides placement assistance to eligible graduates through our airline partner network. However, Aviora does not guarantee employment or placement with any specific airline. Placement outcomes depend on individual performance, airline requirements, and market conditions at the time of graduation.
-            </p>
-            <p className={styles.para}>
-              Walk-in programs, airline connections, and referrals provided by Aviora are supplementary services and do not constitute an employment guarantee. Final hiring decisions rest entirely with the recruiting airline.
-            </p>
-          </section>
-
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>7. Intellectual Property</h2>
-            <p className={styles.para}>
-              All content on the Aviora website — including text, graphics, logos, icons, images, course materials, and software — is the property of Aviora Aviation Academy and is protected under applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without prior written consent from Aviora.
-            </p>
-          </section>
-
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>8. Limitation of Liability</h2>
-            <p className={styles.para}>
-              To the maximum extent permitted by law, Aviora Aviation Academy shall not be liable for any indirect, incidental, consequential, or punitive damages arising out of your use of our services, including but not limited to:
-            </p>
+            <h2 className={styles.sectionTitle}>3. Eligibility & Admission Prerequisites</h2>
+            <p className={styles.para}>Enrollment in any training program is conditional upon fulfilling statutory regulatory requirements:</p>
             <ul className={styles.list}>
-              <li>Loss of employment or expected income</li>
-              <li>Visa rejection or delays by immigration authorities</li>
-              <li>Medical disqualification decisions by approved AMEs</li>
-              <li>DGCA or FAA examination failures</li>
-              <li>Force majeure events including natural disasters, pandemics, or airspace restrictions</li>
+              <li><strong>Age Requirement:</strong> Minimum 17 years of age at the time of commencement for pilot ground school, and minimum 18 years to hold a valid Commercial Pilot Licence or Cabin Crew appointment.</li>
+              <li><strong>Educational Qualification:</strong> Successful completion of 10+2 with Physics and Mathematics (or equivalent recognized board certificate) for pilot programs. Cabin Crew applicants must have completed 10+2 in any stream.</li>
+              <li><strong>Medical Standards:</strong> Pilots must obtain a valid DGCA Class 2 Medical Certificate followed by Class 1 clearance from an authorized Indian Air Force (IAF) or civil AME centre. International cadets must also clear FAA Class 1 medical standards.</li>
+              <li><strong>English Language Proficiency:</strong> Ability to read, write, and converse fluently in English (ICAO Level 4 minimum standard).</li>
             </ul>
-            <p className={styles.para}>
-              Aviora&apos;s total liability shall not exceed the fees paid by you for the specific program in question.
-            </p>
+            <p className={styles.para}>Aviora reserves the right to decline or revoke admission if documentation submitted is found to be counterfeit, falsified, or inaccurate.</p>
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>9. Code of Conduct</h2>
-            <p className={styles.para}>Aviora maintains a strict code of conduct. The Academy reserves the right to terminate enrollment without refund in cases of:</p>
+            <h2 className={styles.sectionTitle}>4. Fees, Payment Schedule & Refund Policy</h2>
+            <h3 className={styles.subTitle}>4.1 Fee Structure & Installments</h3>
+            <p className={styles.para}>
+              All course tuition fees, simulator slot fees, and training materials are outlined in the official Student Offer Letter issued by the Admissions Office. Fees must be remitted strictly according to the agreed milestone schedule.
+            </p>
+            <h3 className={styles.subTitle}>4.2 Refund Regulations</h3>
             <ul className={styles.list}>
-              <li>Provision of false or misleading information in applications</li>
-              <li>Ragging, harassment, or bullying of any kind</li>
-              <li>Substance abuse on academy premises or during training activities</li>
-              <li>Serious violations of aviation safety protocols</li>
-              <li>Conduct bringing disrepute to Aviora or its partner institutions</li>
-              <li>Non-payment of dues after written notice</li>
+              <li><strong>Seat Confirmation Deposit:</strong> The initial seat registration fee is non-refundable as it reserves batch seats, instructional materials, and simulator allocation slots.</li>
+              <li><strong>Tuition Fees Post-Commencement:</strong> Tuition fees paid for an active batch or training module are non-refundable once classes or simulator sessions have commenced.</li>
+              <li><strong>Medical Ineligibility:</strong> In the unforeseen event that a cadet is deemed permanently unfit by DGCA / IAF Central Medical Establishment (CME) post-enrollment, unutilized tuition fees may be refunded pro-rata after deducting administrative and processing expenses.</li>
+              <li><strong>Third-Party Costs:</strong> Fees paid directly to third parties (DGCA exam fees, FAA testing centres, TSA security clearances, SEVIS visa processing, airline medical boards) are governed by the respective authorities and are entirely non-refundable by Aviora.</li>
             </ul>
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>10. Governing Law & Dispute Resolution</h2>
+            <h2 className={styles.sectionTitle}>5. Student Conduct & Aviation Discipline</h2>
+            <p className={styles.para}>Aviation demands the highest standards of discipline, situational awareness, and professional integrity. Enrolled cadets must:</p>
+            <ul className={styles.list}>
+              <li>Maintain a minimum attendance of 85% in all ground school classes, mentor briefings, and simulator sessions.</li>
+              <li>Adhere strictly to Aviora&apos;s uniform and professional grooming standards at all times within academy premises and partner hangars.</li>
+              <li>Comply uncompromisingly with all DGCA, FAA, and ICAO air safety regulations, aerodrome rules, and flight manual procedures.</li>
+              <li>Refrain from any form of harassment, ragging, dishonesty, or substance abuse. Aviora enforces a zero-tolerance policy; violations result in immediate expulsion without refund.</li>
+            </ul>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>6. Mentorship & Placement Support</h2>
             <p className={styles.para}>
-              These Terms and Conditions are governed by and construed in accordance with the laws of India. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Hyderabad, Telangana.
+              Aviora provides dedicated career guidance, mock airline technical interviews, simulator assessments, and airline referral assistance through our experienced <Link href="/mentors" className={styles.emailLink}>Airline Pilot Faculty</Link>.
             </p>
             <p className={styles.para}>
-              Before initiating legal proceedings, both parties agree to attempt resolution through good-faith negotiation. If unresolved, disputes shall be referred to arbitration under the Arbitration and Conciliation Act, 1996.
+              While Aviora maintains an outstanding track record of cadet success across leading domestic and international airlines, statutory regulations prohibit guaranteeing employment. Final selection and employment offers rest entirely with recruiting airlines based on individual candidate merit, DGCA exam performance, airline entrance tests, and simulator assessments.
             </p>
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>11. Amendments</h2>
+            <h2 className={styles.sectionTitle}>7. Intellectual Property Rights</h2>
             <p className={styles.para}>
-              Aviora reserves the right to amend these Terms and Conditions at any time. Material changes will be communicated to enrolled students via email or notice on the student portal. Continued use of our services after such changes constitutes acceptance of the updated terms.
+              All course syllabi, navigation charts, meteorology worksheets, question banks, simulator scenarios, video debriefs, and digital assets provided by Aviora Aviation Academy are proprietary intellectual property. Unauthorized reproduction, digital distribution, or commercial sharing of academy study materials is strictly prohibited and subject to legal action under the Indian Copyright Act.
             </p>
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>12. Contact Us</h2>
-            <p className={styles.para}>For questions regarding these Terms and Conditions, please contact:</p>
+            <h2 className={styles.sectionTitle}>8. Governing Law & Dispute Resolution</h2>
+            <p className={styles.para}>
+              These Terms and Conditions shall be governed by and interpreted under the laws of the Republic of India. Any dispute, claim, or controversy arising out of or relating to academy enrollment shall be subject to the exclusive jurisdiction of the competent courts in Hyderabad, Telangana, India.
+            </p>
+          </section>
+
+          <section className={styles.section}>
+            <h2 className={styles.sectionTitle}>9. Contact & Support</h2>
+            <p className={styles.para}>For clarifications, admissions enquiries, or official correspondence regarding these Terms:</p>
             <div className={styles.contactBlock}>
-              <p><strong>Aviora Aviation Academy — Admissions Office</strong></p>
-              <p>3rd Floor, Skyline Plaza, Banjara Hills</p>
-              <p>Hyderabad, Telangana — 500 034, India</p>
-              <p>Email: <a href="mailto:admissions@avioraacademy.com,fly@avioraacademy.com" className={styles.emailLink}>admissions@avioraacademy.com / fly@avioraacademy.com</a></p>
-              <p>Phone: <a href="tel:+914023456789" className={styles.emailLink}>+91 40 2345 6789</a></p>
+              <p><strong>Aviora Aviation Academy</strong> (Onestop Aviation Pvt Ltd)</p>
+              <p>Block No 5, 8-5-255/66, Inner Ring Road, Defence Colony</p>
+              <p>Hyderabad, Telangana — 500079, India</p>
+              <p>Email: <a href="mailto:admissions@avioraacademy.com" className={styles.emailLink}>admissions@avioraacademy.com</a> · <a href="mailto:fly@avioraacademy.com" className={styles.emailLink}>fly@avioraacademy.com</a></p>
+              <p>Phone: <a href="tel:+916309342416" className={styles.emailLink}>+91 6309342416</a> · WhatsApp: <a href="https://wa.me/917039339716" target="_blank" rel="noopener noreferrer" className={styles.emailLink}>+91 7039339716</a></p>
             </div>
           </section>
 

@@ -6,7 +6,7 @@
   },
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "tinacms build && next build",
     "start": "next start",
     "lint": "eslint"
