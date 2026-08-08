@@ -1,13 +1,16 @@
 import { defineConfig } from "tinacms";
 
+const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true" || !process.env.NEXT_PUBLIC_TINA_CLIENT_ID;
+
 export default defineConfig({
   branch:
     process.env.GITHUB_BRANCH ||
     process.env.VERCEL_GIT_COMMIT_REF ||
     process.env.HEAD ||
     "main",
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "",
-  token: process.env.TINA_TOKEN || "",
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "local",
+  token: process.env.TINA_TOKEN || "local",
+  isLocal: isLocal,
 
   build: {
     outputFolder: "admin",
